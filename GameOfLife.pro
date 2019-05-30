@@ -25,9 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG  += c++11
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        model/board.cpp \
+        model/cell.cpp \
+        model/model.cpp
 
-HEADERS +=
+HEADERS += \
+        model/board.h \
+        model/cell.h \
+        model/model.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
