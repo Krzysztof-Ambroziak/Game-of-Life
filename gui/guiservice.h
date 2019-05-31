@@ -6,14 +6,12 @@
 
 class GuiService {
 public:
-    GuiService();
+    GuiService(const AbstractModel* const model);
     
-    void show() {
-        mainFrame.show();
-    }
+    void show();
 
 public:
-    Canvas* canvas;
+    Canvas* const canvas;
     
     MainFrame mainFrame;
 };

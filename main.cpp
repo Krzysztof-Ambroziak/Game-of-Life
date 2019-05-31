@@ -1,7 +1,7 @@
-#include <QApplication>
+#include "controller/gameoflifeapplication.h"
 
 int main(int argc, char *argv[]) {
-    QApplication a(argc, argv);
+    GameOfLifeApplication application(argc, argv);
     
-    return a.exec();
+    return application.exec();
 }

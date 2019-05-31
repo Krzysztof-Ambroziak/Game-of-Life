@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG  += c++11
 
 SOURCES += \
+        controller/gameoflifeapplication.cpp \
         gui/canvas.cpp \
         gui/guiservice.cpp \
         gui/mainframe.cpp \
@@ -34,9 +35,11 @@ SOURCES += \
         model/model.cpp
 
 HEADERS += \
+        controller/gameoflifeapplication.h \
         gui/canvas.h \
         gui/guiservice.h \
         gui/mainframe.h \
+        model/abstractmodel.h \
         model/board.h \
         model/cell.h \
         model/model.h

@@ -1,13 +1,22 @@
 #ifndef GAMEOFLIFE_MODEL_H
 #define GAMEOFLIFE_MODEL_H
 
+#include "abstractmodel.h"
 #include "board.h"
 
-class Model {
+class Model: public AbstractModel {
 public:
     Model(int rows = DEFAULT_ROWS, int columns = DEFAULT_COLUMNS);
     
-    ~Model();
+    int getRows() const override;
+    
+    int getColumns() const override;
+    
+    int getCellSize() const override;
+    
+    Life getLife(int row, int column) const override;
+    
+    ~Model() override;
 
 private:
     static const int DEFAULT_ROWS = 30;

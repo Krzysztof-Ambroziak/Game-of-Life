@@ -7,7 +7,16 @@ class Board {
 public:
     Board(int rows, int columns);
     
+    int getRows() const;
+    
+    int getColumns() const;
+    
+    Life getLife(int row, int column) const;
+    
     ~Board();
+
+private:
+    int index(int row, int column) const;
 
 private:
     const int rows;
