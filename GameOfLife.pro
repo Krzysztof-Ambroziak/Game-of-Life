@@ -25,12 +25,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG  += c++11
 
 SOURCES += \
+        gui/canvas.cpp \
+        gui/guiservice.cpp \
+        gui/mainframe.cpp \
         main.cpp \
         model/board.cpp \
         model/cell.cpp \
         model/model.cpp
 
 HEADERS += \
+        gui/canvas.h \
+        gui/guiservice.h \
+        gui/mainframe.h \
         model/board.h \
         model/cell.h \
         model/model.h
