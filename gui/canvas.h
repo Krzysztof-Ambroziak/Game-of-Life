@@ -10,6 +10,16 @@ class Canvas: public QWidget {
 public:
     explicit Canvas(const AbstractModel* const model, QWidget* parent = nullptr);
 
+protected:
+    void paintEvent(QPaintEvent* event) override;
+
+private:
+    void drawGrid(QPainter* painter);
+    
+    void drawHorizontalLines(QPainter* painter);
+    
+    void drawVerticalLines(QPainter* painter);
+
 private:
     const AbstractModel* const model;
 
