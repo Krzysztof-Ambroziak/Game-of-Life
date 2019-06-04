@@ -17,10 +17,14 @@ Life Board::getLife(int row, int column) const {
     return cells[index(row, column)].getLife();
 }
 
+void Board::setLife(int row, int column, Life life) {
+    cells[index(row, column)].setLife(life);
+}
+
 Board::~Board() {
     delete[] cells;
 }
 
-int Board::index(int row, int column) const {
+int Board::index(const int& row, const int& column) const {
     return (row + 1) * (columns + 2) + column + 1;
 }

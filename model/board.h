@@ -13,10 +13,12 @@ public:
     
     Life getLife(int row, int column) const;
     
+    void setLife(int row, int column, Life life);
+    
     ~Board();
 
 private:
-    int index(int row, int column) const;
+    int index(const int& row, const int& column) const;
 
 private:
     const int rows;

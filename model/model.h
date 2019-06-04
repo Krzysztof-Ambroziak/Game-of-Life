@@ -16,6 +16,8 @@ public:
     
     Life getLife(int row, int column) const override;
     
+    void changeLife(int row, int column);
+    
     ~Model() override;
 
 private:

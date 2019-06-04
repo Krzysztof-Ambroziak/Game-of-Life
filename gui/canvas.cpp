@@ -1,7 +1,6 @@
 #include "canvas.h"
 #include <QPainter>
 #include <QMouseEvent>
-#include <QDebug>
 
 Canvas::Canvas(const AbstractModel* const model, QWidget* parent):
         QWidget(parent),
@@ -11,13 +10,36 @@ Canvas::Canvas(const AbstractModel* const model, QWidget* parent):
     setMinimumSize(width, height);
 }
 
+void Canvas::connectAction(Actions* actions) {
+    QObject::connect(this, SIGNAL(clicked(int, int)), actions, SLOT(changeCell(int, int)));
+}
+
+void Canvas::mousePressEvent(QMouseEvent* event) {
+    emit clicked(event->x(), event->y());
+}
+
 void Canvas::paintEvent(QPaintEvent* event) {
     QPainter painter(this);
-    painter.setPen(Qt::lightGray);
+    drawCells(&painter);
     drawGrid(&painter);
 }
 
+void Canvas::drawCells(QPainter* painter) {
+    const int rows = model->getRows();
+    const int columns = model->getColumns();
+    const int cellSizeInc = model->getCellSize() + 1;
+    
+    for(int row = 0; row < rows; ++row) {
+        for(int column = 0; column < columns; ++column) {
+            if(model->getLife(row, column) == ALIVE) {
+                painter->fillRect(column * cellSizeInc, row * cellSizeInc, cellSizeInc, cellSizeInc, Qt::black);
+            }
+        }
+    }
+}
+
 void Canvas::drawGrid(QPainter* painter) {
+    painter->setPen(Qt::lightGray);
     drawHorizontalLines(painter);
     drawVerticalLines(painter);
 }
