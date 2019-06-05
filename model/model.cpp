@@ -20,6 +20,10 @@ Life Model::getLife(int row, int column) const {
     return board->getLife(row, column);
 }
 
+void Model::setLive(int row, int column, Life life) {
+    board->setLife(row, column, life);
+}
+
 void Model::changeLife(int row, int column) {
     Life life = board->getLife(row, column);
     if(life == DEAD) {

@@ -16,6 +16,8 @@ public:
     
     Life getLife(int row, int column) const override;
     
+    void setLive(int row, int column, Life life);
+    
     void changeLife(int row, int column);
     
     int computeAliveNeighbours(int row, int column) const;

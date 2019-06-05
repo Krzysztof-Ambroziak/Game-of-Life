@@ -15,6 +15,8 @@ public:
     
     void update();
     
+    int getRandomFactor() const;
+    
     void show();
 
 public:

@@ -2,7 +2,8 @@
 #define GAMEOFLIFE_SETTINGS_H
 
 #include <QWidget>
-#include <QPushButton>
+#include <QAbstractButton>
+#include <QSpinBox>
 #include "model/abstractmodel.h"
 #include "controller/actions.h"
 
@@ -13,6 +14,8 @@ public:
     explicit Settings(const AbstractModel* const model, QWidget *parent = nullptr);
     
     void connectAction(Actions* actions);
+    
+    int randomFactor() const;
 
 signals:
 
@@ -21,7 +24,13 @@ public slots:
 private:
     const AbstractModel* const model;
     
-    QPushButton* nextStepBtn;
+    QAbstractButton* const nextStepBtn;
+    
+    QSpinBox* const randomFactorSB;
+    
+    QAbstractButton* const generateBtn;
+    
+    QAbstractButton* const simulateBtn;
 };
 
 #endif // GAMEOFLIFE_SETTINGS_H

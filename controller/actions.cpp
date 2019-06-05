@@ -1,5 +1,7 @@
 #include "actions.h"
 #include "gameoflifeapplication.h"
+#include <QRandomGenerator>
+#include <QTime>
 
 Actions::Actions(GameOfLifeApplication* application, QObject* parent):
         QObject(parent),
@@ -18,6 +20,26 @@ void Actions::changeCell(int x, int y) {
 void Actions::nextStep() {
     updateAliveNeighbours();
     updateBoard();
+}
+
+void Actions::generateCells() {
+    Model* const model = application->getModel();
+    const int rows = model->getRows();
+    const int columns = model->getColumns();
+    const int randomFactor = application->getGuiService()->getRandomFactor();
+    QRandomGenerator generator(QTime::currentTime().msec());
+    
+    for(int row = 0; row < rows; ++row) {
+        for(int column = 0; column < columns; ++column) {
+            if(generator.bounded(100) < randomFactor) {
+                model->setLive(row, column, Life::ALIVE);
+            }
+            else {
+                model->setLive(row, column, Life::DEAD);
+            }
+        }
+    }
+    application->getGuiService()->update();
 }
 
 void Actions::updateAliveNeighbours() {

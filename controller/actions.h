@@ -22,6 +22,8 @@ public slots:
     void changeCell(int x, int y);
     
     void nextStep();
+    
+    void generateCells();
 
 private:
     GameOfLifeApplication* const application;

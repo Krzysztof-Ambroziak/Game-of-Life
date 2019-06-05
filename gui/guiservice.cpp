@@ -14,6 +14,10 @@ void GuiService::update() {
     canvas->update();
 }
 
+int GuiService::getRandomFactor() const {
+    return settings->randomFactor();
+}
+
 void GuiService::show() {
     mainFrame.show();
 }
