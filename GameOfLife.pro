@@ -30,6 +30,7 @@ SOURCES += \
         gui/canvas.cpp \
         gui/guiservice.cpp \
         gui/mainframe.cpp \
+        gui/settings.cpp \
         main.cpp \
         model/board.cpp \
         model/cell.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
         gui/canvas.h \
         gui/guiservice.h \
         gui/mainframe.h \
+        gui/settings.h \
         model/abstractmodel.h \
         model/board.h \
         model/cell.h \

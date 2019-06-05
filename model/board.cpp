@@ -21,6 +21,30 @@ void Board::setLife(int row, int column, Life life) {
     cells[index(row, column)].setLife(life);
 }
 
+int Board::computeAliveNeighbours(int row, int column) const {
+    int aliveNeighbours = 0;
+    int i = index(row, column);
+    
+    if(cells[i - columns - 3].getLife() == ALIVE) ++aliveNeighbours;
+    if(cells[i - columns - 2].getLife() == ALIVE) ++aliveNeighbours;
+    if(cells[i - columns - 1].getLife() == ALIVE) ++aliveNeighbours;
+    if(cells[i           - 1].getLife() == ALIVE) ++aliveNeighbours;
+    if(cells[i           + 1].getLife() == ALIVE) ++aliveNeighbours;
+    if(cells[i + columns + 1].getLife() == ALIVE) ++aliveNeighbours;
+    if(cells[i + columns + 2].getLife() == ALIVE) ++aliveNeighbours;
+    if(cells[i + columns + 3].getLife() == ALIVE) ++aliveNeighbours;
+    
+    return aliveNeighbours;
+}
+
+int Board::getAliveNeighbours(int row, int column) const {
+    return cells[index(row, column)].getAliveNeighbours();
+}
+
+void Board::setAliveNeighbours(int row, int column, int aliveNeighbours) {
+    cells[index(row, column)].setAliveNeighbours(aliveNeighbours);
+}
+
 Board::~Board() {
     delete[] cells;
 }

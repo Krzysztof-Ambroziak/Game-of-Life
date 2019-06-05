@@ -15,6 +15,12 @@ public:
     
     void setLife(int row, int column, Life life);
     
+    int computeAliveNeighbours(int row, int column) const;
+    
+    int getAliveNeighbours(int row, int column) const;
+    
+    void setAliveNeighbours(int row, int column, int aliveNeighbours);
+    
     ~Board();
 
 private:

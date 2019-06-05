@@ -11,13 +11,20 @@ class Actions: public QObject {
 public:
     explicit Actions(GameOfLifeApplication* application, QObject *parent = nullptr);
 
+private:
+    void updateAliveNeighbours();
+    
+    void updateBoard();
+
 signals:
 
 public slots:
     void changeCell(int x, int y);
+    
+    void nextStep();
 
 private:
-    GameOfLifeApplication* application;
+    GameOfLifeApplication* const application;
 };
 
 #endif // GAMEOFLIFE_ACTIONS_H

@@ -18,6 +18,12 @@ public:
     
     void changeLife(int row, int column);
     
+    int computeAliveNeighbours(int row, int column) const;
+    
+    int getAliveNeighbours(int row, int column) const;
+    
+    void setAliveNeighbours(int row, int column, int aliveNeighbours);
+    
     ~Model() override;
 
 private:

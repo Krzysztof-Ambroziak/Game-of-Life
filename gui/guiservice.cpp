@@ -2,10 +2,12 @@
 
 GuiService::GuiService(const AbstractModel* const model):
         canvas(new Canvas(model)),
-        mainFrame(canvas) {}
+        settings(new Settings(model)),
+        mainFrame(canvas, settings) {}
 
 void GuiService::addActions(Actions* actions) {
     canvas->connectAction(actions);
+    settings->connectAction(actions);
 }
 
 void GuiService::update() {

@@ -5,5 +5,5 @@ int main(int argc, char *argv[]) {
     application.init();
     application.show();
     
-    return application.exec();
+    return GameOfLifeApplication::exec();
 }

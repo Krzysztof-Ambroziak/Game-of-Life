@@ -30,6 +30,18 @@ void Model::changeLife(int row, int column) {
     }
 }
 
+int Model::computeAliveNeighbours(int row, int column) const {
+    return board->computeAliveNeighbours(row, column);
+}
+
+int Model::getAliveNeighbours(int row, int column) const {
+    return board->getAliveNeighbours(row, column);
+}
+
+void Model::setAliveNeighbours(int row, int column, int aliveNeighbours) {
+    board->setAliveNeighbours(row, column, aliveNeighbours);
+}
+
 Model::~Model() {
     delete board;
 }
