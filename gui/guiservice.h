@@ -22,7 +22,7 @@ public:
 public:
     Canvas* const canvas;
     
-    Settings* settings;
+    Settings* const settings;
     
     MainFrame mainFrame;
 };

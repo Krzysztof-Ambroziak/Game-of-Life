@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QAbstractButton>
 #include <QSpinBox>
+#include <QAbstractSlider>
+#include <QLabel>
 #include "model/abstractmodel.h"
 #include "controller/actions.h"
 
@@ -11,7 +13,7 @@ class Settings: public QWidget {
     Q_OBJECT
 
 public:
-    explicit Settings(const AbstractModel* const model, QWidget *parent = nullptr);
+    explicit Settings(QWidget *parent = nullptr);
     
     void connectAction(Actions* actions);
     
@@ -20,15 +22,30 @@ public:
 signals:
 
 public slots:
+    void clickableComponents();
 
 private:
-    const AbstractModel* const model;
+    static const int MINIMUM_RANDOM_PERCENTAGE = 0;
+    
+    static const int MAXIMUM_RANDOM_PERCENTAGE = 100;
+    
+    static const int DEFAULT_RANDOM_PERCENTAGE = 20;
+    
+    static const int MINIMUM_SPEPS_PER_SECONDS = 1;
+    
+    static const int MAXIMUM_SPEPS_PER_SECONDS = 60;
+    
+    bool enabled = true;
+    
+    QAbstractButton* const clearBoardBtn;
     
     QAbstractButton* const nextStepBtn;
     
     QSpinBox* const randomFactorSB;
     
     QAbstractButton* const generateBtn;
+    
+    QAbstractSlider* const speedSl;
     
     QAbstractButton* const simulateBtn;
 };

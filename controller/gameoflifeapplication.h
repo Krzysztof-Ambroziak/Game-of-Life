@@ -2,6 +2,7 @@
 #define GAMEOFLIFE_GAMEOFLIFEAPPLICATION_H
 
 #include <QApplication>
+#include <QTimer>
 #include "actions.h"
 #include "gui/guiservice.h"
 #include "model/model.h"
@@ -24,6 +25,8 @@ private:
     Model model;
     
     GuiService guiService;
+    
+    QTimer* const timer;
     
     Actions actions;
 };

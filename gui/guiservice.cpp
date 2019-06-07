@@ -2,7 +2,7 @@
 
 GuiService::GuiService(const AbstractModel* const model):
         canvas(new Canvas(model)),
-        settings(new Settings(model)),
+        settings(new Settings),
         mainFrame(canvas, settings) {}
 
 void GuiService::addActions(Actions* actions) {

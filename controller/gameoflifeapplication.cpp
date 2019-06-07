@@ -3,6 +3,7 @@
 GameOfLifeApplication::GameOfLifeApplication(int& argc, char** argv):
         QApplication(argc, argv),
         guiService(&model),
+        timer(new QTimer(this)),
         actions(this) {}
 
 Model* GameOfLifeApplication::getModel() {
