@@ -19,10 +19,11 @@ public:
     
     int randomFactor() const;
 
-signals:
-
 public slots:
     void clickableComponents();
+
+public:
+    static const int DEFAULT_SPEPS_PER_SECONDS = 1;
 
 private:
     static const int MINIMUM_RANDOM_PERCENTAGE = 0;

@@ -10,14 +10,14 @@ class Actions: public QObject {
     Q_OBJECT
 
 public:
+    static int spsToMsec(int sps);
+    
     explicit Actions(GameOfLifeApplication* application, QObject *parent = nullptr);
 
 private:
     void updateAliveNeighbours();
     
     void updateBoard();
-
-signals:
 
 public slots:
     void changeCell(int x, int y);
@@ -28,7 +28,9 @@ public slots:
     
     void generateCells();
     
-    void simulateStart();
+    void speedChange(int value);
+    
+    void timerTrigger();
 
 private:
     GameOfLifeApplication* const application;

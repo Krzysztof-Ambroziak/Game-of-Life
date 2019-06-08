@@ -1,7 +1,7 @@
 #include "model.h"
 
 Model::Model(int rows, int columns):
-        cellSize(DEFAULT_CELL_SIZE),
+        cellSize(Model::DEFAULT_CELL_SIZE),
         board(new Board(rows, columns)) {}
 
 int Model::getRows() const {
@@ -26,11 +26,11 @@ void Model::setLive(int row, int column, Life life) {
 
 void Model::changeLife(int row, int column) {
     Life life = board->getLife(row, column);
-    if(life == DEAD) {
-        board->setLife(row, column, ALIVE);
+    if(life == Life::DEAD) {
+        board->setLife(row, column, Life::ALIVE);
     }
     else {
-        board->setLife(row, column, DEAD);
+        board->setLife(row, column, Life::DEAD);
     }
 }
 

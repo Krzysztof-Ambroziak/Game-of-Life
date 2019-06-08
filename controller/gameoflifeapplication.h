@@ -19,7 +19,14 @@ public:
     
     void init();
     
+    void setInterval(int interval);
+    
+    void timerTrigger();
+    
     void show();
+
+private slots:
+    void tick();
 
 private:
     Model model;

@@ -2,7 +2,10 @@
 #include "gameoflifeapplication.h"
 #include <QRandomGenerator>
 #include <QTime>
-#include <QtDebug>
+
+int Actions::spsToMsec(int sps) {
+    return 1000 / sps;
+}
 
 Actions::Actions(GameOfLifeApplication* application, QObject* parent):
         QObject(parent),
@@ -56,8 +59,12 @@ void Actions::generateCells() {
     application->getGuiService()->update();
 }
 
-void Actions::simulateStart() {
-    qDebug() << "Simulate start";
+void Actions::speedChange(int value) {
+    application->setInterval(Actions::spsToMsec(value));
+}
+
+void Actions::timerTrigger() {
+    application->timerTrigger();
 }
 
 void Actions::updateAliveNeighbours() {

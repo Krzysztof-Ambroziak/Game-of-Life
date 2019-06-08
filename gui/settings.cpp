@@ -49,7 +49,8 @@ void Settings::connectAction(Actions* actions) {
     QObject::connect(clearBoardBtn, SIGNAL(clicked()), actions, SLOT(clearBoard()));
     QObject::connect(nextStepBtn, SIGNAL(clicked()), actions, SLOT(nextStep()));
     QObject::connect(generateBtn, SIGNAL(clicked()), actions, SLOT(generateCells()));
-    QObject::connect(simulateBtn, SIGNAL(clicked()), actions, SLOT(simulateStart()));
+    QObject::connect(speedSl, SIGNAL(valueChanged(int)), actions, SLOT(speedChange(int)));
+    QObject::connect(simulateBtn, SIGNAL(clicked()), actions, SLOT(timerTrigger()));
 }
 
 int Settings::randomFactor() const {

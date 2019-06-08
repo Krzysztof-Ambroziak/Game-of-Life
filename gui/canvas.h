@@ -32,8 +32,6 @@ private:
 
 signals:
     void clicked(int x, int y);
-
-public slots:
 };
 
 #endif // GAMEOFLIFE_CANVAS_H
