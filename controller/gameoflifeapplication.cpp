@@ -17,7 +17,7 @@ GuiService* GameOfLifeApplication::getGuiService() {
 }
 
 void GameOfLifeApplication::init() {
-    timer->setInterval(Actions::spsToMsec(Settings::DEFAULT_SPEPS_PER_SECONDS));
+    timer->setInterval(Actions::spsToMsec(Settings::DEFAULT_SPEPS_PER_SECOND));
     guiService.addActions(&actions);
 }
 
@@ -36,7 +36,4 @@ void GameOfLifeApplication::timerTrigger() {
 
 void GameOfLifeApplication::show() {
     guiService.show();
-}
-
-void GameOfLifeApplication::tick() {
 }

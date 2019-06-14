@@ -19,7 +19,7 @@ Settings::Settings(QWidget *parent):
     
     randomFactorSB->setRange(Settings::MINIMUM_RANDOM_PERCENTAGE, Settings::MAXIMUM_RANDOM_PERCENTAGE);
     randomFactorSB->setValue(Settings::DEFAULT_RANDOM_PERCENTAGE);
-    speedSl->setRange(Settings::MINIMUM_SPEPS_PER_SECONDS, Settings::MAXIMUM_SPEPS_PER_SECONDS);
+    speedSl->setRange(Settings::MINIMUM_SPEPS_PER_SECOND, Settings::MAXIMUM_SPEPS_PER_SECOND);
     spsLb->setNum(speedSl->value());
     spsLb->setAlignment(Qt::AlignRight);
     

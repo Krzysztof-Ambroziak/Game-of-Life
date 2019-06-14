@@ -25,9 +25,6 @@ public:
     
     void show();
 
-private slots:
-    void tick();
-
 private:
     Model model;
     

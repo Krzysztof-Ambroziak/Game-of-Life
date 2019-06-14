@@ -23,7 +23,7 @@ public slots:
     void clickableComponents();
 
 public:
-    static const int DEFAULT_SPEPS_PER_SECONDS = 1;
+    static const int DEFAULT_SPEPS_PER_SECOND = 1;
 
 private:
     static const int MINIMUM_RANDOM_PERCENTAGE = 0;
@@ -32,9 +32,9 @@ private:
     
     static const int DEFAULT_RANDOM_PERCENTAGE = 20;
     
-    static const int MINIMUM_SPEPS_PER_SECONDS = 1;
+    static const int MINIMUM_SPEPS_PER_SECOND = 1;
     
-    static const int MAXIMUM_SPEPS_PER_SECONDS = 60;
+    static const int MAXIMUM_SPEPS_PER_SECOND = 60;
     
     bool enabled = true;
     
